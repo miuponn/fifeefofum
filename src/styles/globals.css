@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Urbanist';
+    src: url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600;700&display=swap');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChewieDEMO';
+    src: url('../../public/fonts/ChewieDEMO-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChewieDEMO';
+    src: url('../../public/fonts/ChewieDEMO-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChewieDEMO';
+    src: url('../../public/fonts/ChewieDEMO-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChewieDEMO';
+    src: url('../../public/fonts/ChewieDEMO-ExtraBold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MagicalSnow';
+    src: url('../../public/fonts/MagicalSnow.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SnowDoodle';
+    src: url('../../public/fonts/SnowDoodle.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ViuCobacoba';
+    src: url('../../public/fonts/ViuCobacoba.ttf') format('truetype');
+}
+
+.name_style {
+    font-family: 'SnowDoodle', sans-serif;
+    -webkit-text-stroke: 8px theme("colors.dark_pink_secondary"); 
+    -webkit-text-fill-color: #F9E1E1; /* Fill color */
+}
