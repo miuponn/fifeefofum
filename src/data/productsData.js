@@ -3,7 +3,8 @@ const productsData = [
         id: 1,
         name: "Sea Creature Phone Charm",
         price: "$10.00 CAD",
-        thumbnail: "/images/sea-creature-charm.png",
+        thumbnail: "/images/sea-creature-charm-tn.png",
+        thumbnail2: "/images/sea-creature-charm-tn1.png",
         images: [
             "/images/sea-creature-charm1.png",
             "/images/sea-creature-charm2.png",
@@ -28,7 +29,8 @@ const productsData = [
         id: 2,
         name: "Lovebird Fruits Keychain",
         price: "$12.00 CAD",
-        thumbnail: "/images/lovebirds-fruits-keychain.png",
+        thumbnail: "/images/lovebirds-fruits-keychain-tn.png",
+        thumbnail2: "/images/lovebirds-fruits-keychain-tn1.png",
         images: [
         "/images/lovebirds-fruits-keychain1.png",
         ],
@@ -49,7 +51,8 @@ const productsData = [
         id: 3,
         name: "Pokémon Phone Charm",
         price: "$14.00 CAD",
-        thumbnail: "/images/pokemon-charm.png",
+        thumbnail: "/images/pokemon-charm-tn.png",
+        thumbnail2: "/images/pokemon-charm-tn.png",
         images: [
             "/images/pokemon-charm1.png",
         ],
@@ -64,7 +67,8 @@ const productsData = [
         id: 4,
         name: "Kawaii Kitty Phone Charm",
         price: "$13.00 CAD",
-        thumbnail: "/images/kawaii-kitty-charm.png",
+        thumbnail: "/images/kawaii-kitty-charm-tn.png",
+        thumbnail2: "/images/kawaii-kitty-charm-tn1.png",
         images: [
             "/images/kawaii-kitty-charm1.png",
         ],

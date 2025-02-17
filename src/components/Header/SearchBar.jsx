@@ -14,7 +14,7 @@ const SearchBar = () => {
       >
         {/* Static "search..." Text (Disappears on Focus) */}
         {!isFocused && (
-          <span className="text-[#F9E1E1] font-viucobacoba text-sm transition-opacity duration-300">
+          <span className="text-[#F9E1E1] font-viucobacoba text-lg transition-opacity duration-300">
             search...
           </span>
         )}

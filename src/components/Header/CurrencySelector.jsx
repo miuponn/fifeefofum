@@ -19,46 +19,46 @@ const CurrencySelector = () => {
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setIsOpen(false);
-        }
-    };
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     return (
         <div ref={dropdownRef} className="relative inline-block text-left">
-        {/* Selected currency display */}
-        <button
-            onClick={toggleDropdown}
-            className="px-4 py-2 bg-white flex items-center justify-between w-28
-            text-dark_pink font-medium transition-all duration-300 ease-in-out
-            hover:scale-105 hover:underline hover:text-dark_pink font-poppins"
-        >
-            {selectedCurrency} {currenciesData[selectedCurrency]?.symbol} {/* CAD $ */}
-            {isOpen ? (
-            <FiChevronUp className="ml-2 text-button_pink transition-transform duration-300 ease-in-out" />
-            ) : (
-            <FiChevronDown className="ml-2 text-button_pink transition-transform duration-300 ease-in-out" />
-            )}
-        </button>
+            {/* Selected currency display */}
+            <button
+                onClick={toggleDropdown}
+                className="px-4 py-2 bg-white flex items-center justify-between w-28
+                text-dark_pink font-medium transition-all duration-300 ease-in-out
+                hover:scale-105 hover:underline hover:text-dark_pink font-poppins"
+            >
+                {selectedCurrency} {currenciesData[selectedCurrency]?.symbol_native} {/* CAD $ */}
+                {isOpen ? (
+                    <FiChevronUp className="ml-2 text-button_pink transition-transform duration-300 ease-in-out" />
+                ) : (
+                    <FiChevronDown className="ml-2 text-button_pink transition-transform duration-300 ease-in-out" />
+                )}
+            </button>
 
-        {/* Dropdown menu */}
-        {isOpen && (
-            <div className="absolute left-0 mt-2 w-48 bg-white border border-pink rounded-md max-h-60 overflow-auto shadow-lg">
-            {Object.entries(currenciesData).map(([code, data]) => (
-                <button
-                key={code}
-                onClick={() => handleSelect(code)}
-                className="w-full text-left px-4 py-2 hover:text-dark_pink flex justify-between items-center text-dark_pink 
-                    font-normal font-poppins"
-                >
-                <span>{code} {data.symbol} | {data.name}</span>
-                </button>
-            ))}
-            </div>
-        )}
+            {/* Dropdown menu */}
+            {isOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white border border-pink rounded-md max-h-60 overflow-auto shadow-lg">
+                    {Object.entries(currenciesData).map(([code, data]) => (
+                        <button
+                            key={code}
+                            onClick={() => handleSelect(code)}
+                            className="w-full text-left px-4 py-2 hover:text-dark_pink flex justify-between items-center text-dark_pink 
+                                font-normal font-poppins"
+                        >
+                            <span>{code} {data.symbol_native} | {data.name_plural}</span>
+                        </button>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

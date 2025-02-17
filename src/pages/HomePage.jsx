@@ -15,14 +15,14 @@ const HomePage = () => {
   
         {/* Featured Items Section */}
         <section className="w-full flex justify-center">
-          <div className="w-full max-w-[1400px] px-4 md:px-12">
+          <div className="w-full">
             <FeaturedItems />
           </div>
         </section>
   
         {/* Instagram + Intro Section */}
-        <section className="w-full flex justify-center bg-white py-12 px-4 md:px-12 lg:px-20">
-          <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-12">
+        <section className="w-full bg-white py-12">
+          <div className="container mx-auto px-4 md:px-12 lg:px-20">
             <IntroSection />
           </div>
         </section>

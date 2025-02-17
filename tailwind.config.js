@@ -32,7 +32,7 @@ module.exports = {
         blue: '#92C3FF', // text color
       },
       dropShadow: {
-        'custom': '2px 2px 30px rgba(100, 0, 0, 0.6)',
+        'custom': '2px 2px 20px rgba(100, 0, 0, 0.8)', // Adjusted drop shadow
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

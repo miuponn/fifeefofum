@@ -1,42 +1,32 @@
 import { motion } from "framer-motion";
-import InstagramGrid from "../components/IntroSection/InstagramFeed";
+import InstagramFeed from "./IntroSection/InstagramFeed";
 import IntroText from "./IntroSection/IntroText";
-
-const fadeInFromLeft = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
-
-const fadeInFromRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } }
-};
 
 const IntroSection = () => {
     return (
-        <section className="bg-white w-full py-12 px-4 md:px-12 lg:px-16">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center">
-                {/* Instagram Grid (Left on Desktop, Top on Mobile) */}
-                <motion.div
-                    className="w-full"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={fadeInFromLeft}
-                >
-                    <InstagramGrid />
-                </motion.div>
+        <section className="bg-white w-full py-12 md:py-16 lg:py-20">
+            <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
+                    {/* Instagram Grid */}
+                    <motion.div
+                        className="relative w-full"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        <InstagramFeed />
+                    </motion.div>
 
-                {/* Intro Text (Right on Desktop, Below on Mobile) */}
-                <motion.div
-                    className="w-full"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={fadeInFromRight}
-                >
-                    <IntroText />
-                </motion.div>
+                    {/* Intro Text */}
+                    <motion.div
+                        className="relative w-full flex justify-center md:justify-start"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        <IntroText />
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
