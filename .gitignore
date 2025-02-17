@@ -1,0 +1,56 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/build
+/dist
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE specific files
+.vscode/*
+!.vscode/settings.json
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Misc
+.cache
+.temp
+*.log
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Optional VS Code workspace settings
+.vscode-test
+
+# Tailwind CSS processed output
+src/styles/output.css
+
+# Local font files (if needed)
+# Uncomment if you want to ignore font files
+# /public/fonts/*
+# /src/assets/fonts/*

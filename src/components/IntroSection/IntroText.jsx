@@ -1,11 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
 
-const fadeInFromRight = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
-
 const IntroText = () => {
     return (
         <div className="w-full md:w-1/2 flex flex-col justify-center items-start md:items-start text-left md:text-left text-dark_pink_secondary px-6 md:px-12 lg:px-16">

@@ -1,16 +1,23 @@
 import productsData from "../data/productsData.js"; // Static source for now
 import ProductCard from "./ProductCard.jsx";
+import gridPattern from '../assets/grid-pattern.svg';
 
 const FeaturedItems = () => {
     const displayedProducts = productsData.slice(0, 4);
 
     console.log(displayedProducts); // Log the displayed products
 
+    // Product Card styles
+    const buttonStyle = "mt-2 sm:mt-3 px-4 sm:px-6 py-2 sm:py-3 bg-button_pink text-white font-poppins text-xs sm:text-sm md:text-lg font-normal hover:bg-white hover:text-button_pink";
+    const priceStyle = "text-xs sm:text-sm md:text-md text-dark_green font-urbanist";
+    const nameStyle = "text-sm sm:text-base md:text-lg font-urbanist text-dark_green";
+
     return (
         <section className="relative bg-[#DCEDC1] py-10 px-4 sm:px-6 md:px-12 lg:px-20">
             {/* Grid Overlay */}
             <div
-                className="absolute inset-0 bg-[url('/images/grid-pattern.svg')] bg-repeat opacity-50 pointer-events-none bg-cover"
+                style={{ backgroundImage: `url(${gridPattern})` }}
+                className="absolute inset-0 bg-repeat opacity-50 pointer-events-none bg-cover"
             ></div>
 
             {/* Section Header */}
@@ -26,6 +33,9 @@ const FeaturedItems = () => {
                         image={product.thumbnail}
                         name={product.name}
                         price={product.price}
+                        buttonStyle={buttonStyle}
+                        priceStyle={priceStyle}
+                        nameStyle={nameStyle}
                     />
                 ))}
             </div>

@@ -3,13 +3,13 @@ const productsData = [
         id: 1,
         name: "Sea Creature Phone Charm",
         price: "$10.00 CAD",
-        thumbnail: "../../public/images/sea-creature-charm.png",
+        thumbnail: "/images/sea-creature-charm.png",
         images: [
-            "../../public/images/sea-creature-charm1.png",
-            "../../public/images/sea-creature-charm2.png",
-            "../../public/images/sea-creature-charm3.png",
-            "../../public/images/sea-creature-charm4.png",
-            "../../public/images/sea-creature-charm5.png",
+            "/images/sea-creature-charm1.png",
+            "/images/sea-creature-charm2.png",
+            "/images/sea-creature-charm3.png",
+            "/images/sea-creature-charm4.png",
+            "/images/sea-creature-charm5.png",
         ],
         description:
             "🐳 Adorable sea creature phone charms made with a mix of glass and acrylic beads! the fishies are ceramic beads :) 🐳\n\n" +
@@ -28,9 +28,9 @@ const productsData = [
         id: 2,
         name: "Lovebird Fruits Keychain",
         price: "$12.00 CAD",
-        thumbnail: "../../public/images/lovebird-fruits-keychain.png",
+        thumbnail: "/images/lovebirds-fruits-keychain.png",
         images: [
-        "../../public/images/lovebird-fruits-keychain1.png",
+        "/images/lovebirds-fruits-keychain1.png",
         ],
         description:
             "🍎 Cute lovebird keychains with an accompanying fruit based on their feather colour!\n\n" +
@@ -49,9 +49,9 @@ const productsData = [
         id: 3,
         name: "Pokémon Phone Charm",
         price: "$14.00 CAD",
-        thumbnail: "../../public/images/pokemon-phone-charm.png",
+        thumbnail: "/images/pokemon-charm.png",
         images: [
-            "../../public/images/pokemon-phone-charm1.png",
+            "/images/pokemon-charm1.png",
         ],
         description:
             "✨ Adorable Pokémon phone charm made with glass beads ✨\n\n" +
@@ -64,9 +64,9 @@ const productsData = [
         id: 4,
         name: "Kawaii Kitty Phone Charm",
         price: "$13.00 CAD",
-        thumbnail: "../../public/images/kawaii-kitty-charm.png",
+        thumbnail: "/images/kawaii-kitty-charm.png",
         images: [
-            "../../public/images/kawaii-kitty-charm1.png",
+            "/images/kawaii-kitty-charm1.png",
         ],
         description: 
             "🐈 Adorable cat phone charm made with ceramic cat and glass beads 🐈\n\n" +

@@ -1,3 +1,5 @@
 {
-    "heroImage": "/src/assets/hero1.png"
+    "images": [
+        "/src/assets/hero1.png"
+    ]
 }

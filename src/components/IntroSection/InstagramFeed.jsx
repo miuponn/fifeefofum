@@ -1,45 +1,56 @@
 import React from 'react';
+import useImagePreloader from '../../hooks/useImagePreloader';
+// Import images from src/assets
+import instagram1 from '../../assets/instagram1.png';
+import instagram2 from '../../assets/instagram2.png';
+import instagram3 from '../../assets/instagram3.png';
+import instagram4 from '../../assets/instagram4.png';
+import instagram5 from '../../assets/instagram5.png';
+import instagram6 from '../../assets/instagram6.png';
 
 const instagramPosts = [
     {
         id: "post1",
-        image: "../../../public/images/instagram-post1.png",
+        image: instagram1,
         link: "https://www.instagram.com/p/DC_4kumxyF4/",
         type: "video",
     },
     {
         id: "post2",
-        image: "../../../public/images/instagram-post2.png",
+        image: instagram2,
         link: "https://www.instagram.com/p/C4KBpKhuI3d/",
         type: "video",
     },
     {
         id: "post3",
-        image: "../../../public/images/instagram-post3.png",
+        image: instagram3,
         link: "https://www.instagram.com/p/C3b0s30ug-m/?img_index=1",
         type: "image",
     },
     {
         id: "post4",
-        image: "../../../public/images/instagram-post4.png",
+        image: instagram4,
         link: "https://www.instagram.com/p/C3EMDccMZTI/?img_index=1",
         type: "image",
     },
     {
         id: "post5",
-        image: "../../../public/images/instagram-post5.png",
+        image: instagram5,
         link: "https://www.instagram.com/p/C2VoobfOz2Y/",
         type: "video",
     },
     {
         id: "post6",
-        image: "../../../public/images/instagram-post6.png",
+        image: instagram6,
         link: "https://www.instagram.com/p/C0m_dL9uapH/",
         type: "video",
     },
 ];
 
 const InstagramEmbedGrid = () => {
+    const imageUrls = instagramPosts.map(post => post.image);
+    const imagesLoaded = useImagePreloader(imageUrls);
+
     return (
         <section className="relative py-12 px-4 md:px-12">
             {/* Header */}
@@ -58,11 +69,15 @@ const InstagramEmbedGrid = () => {
                         className="relative group overflow-hidden w-full aspect-square"
                     >
                         {/* Post Image */}
-                        <img
-                            src={post.image}
-                            alt="Instagram Post"
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
+                        {imagesLoaded ? (
+                            <img
+                                src={post.image}
+                                alt="Instagram Post"
+                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                        ) : (
+                            <div className="w-full h-full bg-gray-200 animate-pulse"></div>
+                        )}
     
                         {/* Hover Overlay */}
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

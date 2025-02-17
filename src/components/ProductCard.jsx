@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import useImagePreloader from '../hooks/useImagePreloader';
 
-const ProductCard = ({ image, name, price }) => {
+const ProductCard = ({ image, name, price, buttonStyle, priceStyle, nameStyle }) => {
     const imagesLoaded = useImagePreloader([image]);
 
     return (
@@ -23,16 +23,16 @@ const ProductCard = ({ image, name, price }) => {
             )}
 
             {/* Product Name */}
-            <h3 className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg font-urbanist text-dark_green text-center font-bold">
+            <h3 className={`mt-3 sm:mt-4 text-center font-bold ${nameStyle}`}>
                 {name}
             </h3>
 
             {/* Product Price */}
-            <p className="text-xs sm:text-sm md:text-md text-dark_green font-urbanist font-semibold">{price}</p>
+            <p className={`font-semibold ${priceStyle}`}>{price}</p>
 
             {/* Add to Cart Button */}
             <motion.button
-                className="mt-2 sm:mt-3 px-4 sm:px-6 py-2 sm:py-3 bg-button_pink text-white font-poppins text-xs sm:text-sm md:text-lg font-normal rounded-md transition-all duration-300 hover:bg-white hover:text-button_pink"
+                className={`rounded-md transition-all duration-300 ${buttonStyle}`}
                 whileTap={{ scale: 0.95 }}
             >
                 ADD TO CART

@@ -1,6 +1,6 @@
 import ImageSlider from "./Hero/ImageSlider";
 import HeroText from "./Hero/HeroText";
-import birdLogo from "../../assets/logo-bird.png";
+import birdLogo from "../assets/logo-bird.png";
 
 const Hero = () => {
     return (

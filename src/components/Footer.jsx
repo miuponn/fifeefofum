@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { FiInstagram, FiTiktok } from "react-icons/fi";
-import EtsyIcon from '../../public/images/etsy.svg';
+import { FiInstagram } from "react-icons/fi";
+import { SiTiktok } from "react-icons/si";
+import EtsyIcon from '../assets/etsy.svg';
 
 const Footer = () => {
   return (
-    <footer className="bg-accent_pink text-white py-10 px-6 md:px-12 lg:px-20 flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-6">
+    <footer className="bg-accent_pink text-white py-10 px-6 md:px-12 lg:px-20 flex flex-col md:flex-row justify-between items-center md:items-start text-center md:text-left gap-6 min-h-[3rem]">
       {/* Left - Menu */}
       <div className="md:w-1/3 flex flex-col items-center md:items-start">
         {/* Styled Logo */}
@@ -25,7 +26,7 @@ const Footer = () => {
             <FiInstagram />
           </a>
           <a href="https://www.tiktok.com/@fifeefofum" className="transition">
-            <FiTiktok />
+            <SiTiktok />
           </a>
           <a href="https://www.etsy.com/shop/fifeefofum" className="transition">
             <img src={EtsyIcon} alt="Etsy" className="h-6" />
