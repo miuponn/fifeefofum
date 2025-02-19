@@ -1,10 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FiUser, FiShoppingBag, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { useCart } from '../../context/CartContext';
 
 const NavLinks = () => {
     const [isShopOpen, setIsShopOpen] = useState(false);
     const dropdownRef = useRef(null); // Ref for detecting outside clicks
+    const { setIsCartOpen, getCartItemsCount } = useCart();
+    const itemsCount = getCartItemsCount();
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -68,12 +71,22 @@ const NavLinks = () => {
                 Contact
             </Link>
 
-            {/* User and Cart Icons */}
+            {/* User Icon */}
             <button className="hover:scale-105 transition duration-300">
                 <FiUser className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
-            <button className="hover:scale-105 transition duration-300">
-                <FiShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+
+            {/* Dynamic Cart Icon */}
+            <button 
+                onClick={() => setIsCartOpen(true)}
+                className="relative hover:scale-105 transition duration-300"
+            >
+                <FiShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-dark_pink_secondary" />
+                {itemsCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-button_pink text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center">
+                        {itemsCount}
+                    </span>
+                )}
             </button>
         </div>
     );

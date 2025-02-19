@@ -128,15 +128,18 @@ const HamburgerMenu = () => {
 
                 {/* Bottom Section */}
                 <div className="absolute bottom-0 left-0 right-0 px-6 pb-8">
-                    {/* User Login */}
-                    <div className="flex items-center gap-2 mb-6 text-dark_pink_secondary">
-                        <FiUser className="h-5 w-5" />
-                        <span className="text-sm font-poppins">Log in</span>
-                    </div>
+                    {/* Currency and Login Row */}
+                    <div className="flex items-center justify-between mb-6">
+                        {/* Currency Selector */}
+                        <div className="scale-90 origin-left">
+                            <CurrencySelector expandUp={true} />
+                        </div>
 
-                    {/* Currency Selector */}
-                    <div className="mb-6 scale-90 origin-left">
-                        <CurrencySelector />
+                        {/* User Login */}
+                        <div className="flex items-center gap-2 text-dark_pink_secondary">
+                            <FiUser className="h-5 w-5" />
+                            <span className="text-sm font-poppins">Log in</span>
+                        </div>
                     </div>
 
                     {/* Social Icons */}
@@ -163,7 +166,12 @@ const HamburgerMenu = () => {
                             rel="noopener noreferrer"
                             className="hover:scale-105 transition duration-300"
                         >
-                            <img src={EtsyIcon} alt="Etsy" className="h-5 w-5" />
+                            <img 
+                                src={EtsyIcon} 
+                                alt="Etsy" 
+                                className="h-9 w-9 pb-3" 
+                                style={{ filter: 'invert(37%) sepia(74%) saturate(1096%) hue-rotate(308deg) brightness(91%) contrast(89%)' }}
+                            />
                         </a>
                     </div>
                 </div>

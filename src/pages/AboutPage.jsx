@@ -49,7 +49,7 @@ const AboutPage = () => {
                             {/* Main Text */}
                             <div className="space-y-4 text-dark_pink font-poppins font-normal text-sm md:text-base lg:text-lg mt-2 pt-4 md:pt-6">
                                 <p>
-                                Hi! I'm Fifi and I'm a digital/traditional anime artist (or hobbyist) focusing on bring my bright and colourful creations to you! I like making bright and colourful accessories mainly, but play around with making cute stickers and prints as well!
+                                Hi! I'm Fifi and I'm a digital/traditional anime artist (or hobbyist) based in Toronto, Canada. Everyday I'm focused on bringing my bright and colourful creations to you! I like making bright and colourful accessories mainly, but play around with making cute stickers and prints as well!
 
                                 </p>
 

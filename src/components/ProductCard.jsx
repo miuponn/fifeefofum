@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom"; 
 import useImagePreloader from '../hooks/useImagePreloader';
 import { useState } from "react";
+import { useCart } from '../context/CartContext';
 
 const ProductCard = ({ 
     id, 
@@ -20,11 +21,25 @@ const ProductCard = ({
     const location = useLocation(); 
     const [isHovered, setIsHovered] = useState(false);
     const imagesLoaded = useImagePreloader([image, thumbnail2]);
+    const { addToCart, setIsCartOpen } = useCart();
 
     const handleProductClick = () => {
         navigate(`/product/${id.toString()}`, {
             state: { from: location.pathname }
         });
+    };
+
+    const handleAddToCart = (e) => {
+        e.stopPropagation();
+        const product = {
+            id,
+            name,
+            price,
+            thumbnail: image,
+            quantity: 1
+        };
+        addToCart(product, 1);
+        setIsCartOpen(true); 
     };
 
     return (
@@ -81,6 +96,7 @@ const ProductCard = ({
             <motion.button
                 className={`w-[75%] py-[4%] mt-[7%] rounded-md text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm transition-all duration-300 ${buttonStyle} ${buttonHoverStyle}`}
                 whileTap={{ scale: 0.95 }}
+                onClick={handleAddToCart}
             >
                 ADD TO CART
             </motion.button>

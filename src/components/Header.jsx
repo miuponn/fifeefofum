@@ -34,7 +34,7 @@ const Header = () => {
                     </div>
 
                     {/* Right: Navigation Links */}
-                    <div className="w-[25%] flex justify-end">
+                    <div className="w-[25%] flex justify-end items-center gap-4">
                         <NavLinks />
                     </div>
                 </nav>

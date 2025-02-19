@@ -61,7 +61,7 @@ const FAQItem = ({ question, answer }) => {
 
 const FAQsPage = () => {
     return (
-        <div className="min-h-screen flex flex-col bg-white">
+        <div className="min-h-screen flex flex-col bg-bg_pink">
             <Header />
             
             <main className="flex-grow py-8 md:py-12 lg:py-16 relative">

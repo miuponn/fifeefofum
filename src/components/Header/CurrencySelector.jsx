@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import currenciesData from "../../data/currencies.json";
 
-const CurrencySelector = () => {
+const CurrencySelector = ({ expandUp = false }) => {
     const [selectedCurrency, setSelectedCurrency] = useState("CAD"); // Default CAD
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null); // Ref for detecting outside clicks
@@ -44,9 +44,9 @@ const CurrencySelector = () => {
                 )}
             </button>
 
-            {/* Dropdown menu */}
+            {/* Dropdown/Upward menu */}
             {isOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-white border border-pink rounded-md max-h-60 overflow-auto shadow-lg">
+                <div className={`absolute ${expandUp ? 'bottom-full mb-2' : 'top-full mt-2'} left-0 w-48 bg-white border border-pink rounded-md max-h-60 overflow-auto shadow-lg`}>
                     {Object.entries(currenciesData).map(([code, data]) => (
                         <button
                             key={code}

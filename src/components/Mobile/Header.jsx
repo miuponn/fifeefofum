@@ -2,12 +2,15 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiX, FiShoppingBag } from 'react-icons/fi';
+import { useCart } from '../../context/CartContext';
 import AnnouncementBar from '../Header/AnnouncementBar';
 import HamburgerMenu from './HamburgerMenu';
 import Fifeefofum from '../../assets/images/Fifeefofum.svg';
 
 const MobileHeader = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const { setIsCartOpen, getCartItemsCount } = useCart();
+    const itemsCount = getCartItemsCount();
 
     return (
         <header className="w-full relative z-50 md:hidden">
@@ -38,9 +41,18 @@ const MobileHeader = () => {
                     >
                         <FiSearch className="text-xl" />
                     </button>
-                    <Link to="/cart" className="text-dark_pink_secondary hover:scale-105 transition duration-300">
+                    {/* Cart Button */}
+                    <button 
+                        onClick={() => setIsCartOpen(true)}
+                        className="relative text-dark_pink_secondary hover:scale-105 transition duration-300"
+                    >
                         <FiShoppingBag className="text-xl" />
-                    </Link>
+                        {itemsCount > 0 && (
+                            <span className="absolute -top-2 -right-2 bg-button_pink text-white text-xs font-semibold rounded-full w-4 h-4 flex items-center justify-center">
+                                {itemsCount}
+                            </span>
+                        )}
+                    </button>
                 </div>
             </nav>
 
