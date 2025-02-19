@@ -1,6 +1,6 @@
 const productsData = [
     {
-        id: 1,
+        id: 'sea-creature-charm',
         name: "Sea Creature Phone Charm",
         price: "$10.00 CAD",
         thumbnail: "/images/sea-creature-charm-tn.png",
@@ -26,13 +26,18 @@ const productsData = [
         ]
     },
     {
-        id: 2,
+        id: 'lovebirds-fruits-keychain',
         name: "Lovebird Fruits Keychain",
         price: "$12.00 CAD",
         thumbnail: "/images/lovebirds-fruits-keychain-tn.png",
         thumbnail2: "/images/lovebirds-fruits-keychain-tn1.png",
         images: [
         "/images/lovebirds-fruits-keychain1.png",
+        "/images/lovebirds-fruits-keychain2.png",
+        "/images/lovebirds-fruits-keychain3.png",
+        "/images/lovebirds-fruits-keychain4.png",
+        "/images/lovebirds-fruits-keychain5.png",
+        "/images/lovebirds-fruits-keychain6.png",
         ],
         description:
             "🍎 Cute lovebird keychains with an accompanying fruit based on their feather colour!\n\n" +
@@ -45,16 +50,19 @@ const productsData = [
             "🍎 2\" acrylic keychain (as in the longest dimension on each charm is 2 inches, based on the design its either the width or the height of the design that is 2\"\n\n" +
             "🍎The printed side is coated with glitter epoxy to add a beautiful glimmer and protect the printed image\n\n" +
             "🍎You can also purchase a sticker sheet with all 5 of these love birds, and each sticker on the sheet are 1.5-2 inch stickers",
-        styles: ["Banana Lovebird", "Grape Lovebird", "Mango Lovebird", "Blueberry Lovebird", "Pair of Lovebirds"],
+        styles: ["Banana", "Grape", "Mango", "Blueberry", "Pair"],
     },
     {
-        id: 3,
+        id: 'pokemon-charm',
         name: "Pokémon Phone Charm",
         price: "$14.00 CAD",
         thumbnail: "/images/pokemon-charm-tn.png",
-        thumbnail2: "/images/pokemon-charm-tn.png",
+        thumbnail2: "/images/pokemon-charm-tn1.png",
         images: [
             "/images/pokemon-charm1.png",
+            "/images/pokemon-charm2.png",
+            "/images/pokemon-charm3.png",
+            "/images/pokemon-charm4.png",
         ],
         description:
             "✨ Adorable Pokémon phone charm made with glass beads ✨\n\n" +
@@ -64,19 +72,25 @@ const productsData = [
         styles: ["Squirtle", "Charmander", "Bulbasaur"],
     },
     {
-        id: 4,
+        id: 'kawaii-kitty-charm',
         name: "Kawaii Kitty Phone Charm",
         price: "$13.00 CAD",
         thumbnail: "/images/kawaii-kitty-charm-tn.png",
         thumbnail2: "/images/kawaii-kitty-charm-tn1.png",
         images: [
             "/images/kawaii-kitty-charm1.png",
+            "/images/kawaii-kitty-charm2.png",
+            "/images/kawaii-kitty-charm3.png",
+            "/images/kawaii-kitty-charm4.png",
+            "/images/kawaii-kitty-charm5.png",
+            "/images/kawaii-kitty-charm6.png",
         ],
         description: 
             "🐈 Adorable cat phone charm made with ceramic cat and glass beads 🐈\n\n" +
             "Panda 🐼 also available!\n\n" +
             "Can be used as a phone charm, bag charm, on any thing :)\n\n" +
-            "Please treat it gently as they are glass/ceramic beads 🌟"
+            "Please treat it gently as they are glass/ceramic beads 🌟",
+        styles: ["Tuxedo", "Pink", "Pink & White", "Panda", "Orange", "Calico", "Blue" ]
     },
 ];
 

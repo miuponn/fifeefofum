@@ -28,6 +28,7 @@ const RecommendedItems = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <ProductCard
+                            key={product.id}
                             id={product.id}
                             image={product.thumbnail}
                             thumbnail2={product.thumbnail2}

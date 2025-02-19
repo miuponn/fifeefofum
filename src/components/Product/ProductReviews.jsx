@@ -3,7 +3,7 @@ import { FiStar } from 'react-icons/fi';
 import reviewsData from '../../data/reviews';
 
 const ProductReviews = ({ productId }) => {
-    const productReviews = reviewsData.find((product) => product.productId === productId)?.reviews || [];
+    const productReviews = reviewsData.find((product) => product.productId.toString() === productId)?.reviews || [];
 
     return (
         <div className="max-w-3xl mx-auto">

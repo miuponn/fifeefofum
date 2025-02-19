@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom"; 
 import useImagePreloader from '../hooks/useImagePreloader';
 import { useState } from "react";
 
@@ -11,17 +11,20 @@ const ProductCard = ({
     buttonStyle, 
     priceStyle, 
     nameStyle,
-    priceHoverStyle = "hover:text-peach", // Default hover style
-    nameHoverStyle = "hover:underline decoration-dark_green", // Default hover style
-    buttonHoverStyle = "hover:bg-pink hover:text-white", // Default hover style
+    priceHoverStyle = "hover:text-peach", 
+    nameHoverStyle = "hover:underline decoration-dark_green", 
+    buttonHoverStyle = "hover:bg-pink hover:text-white", 
     thumbnail2 
 }) => {
     const navigate = useNavigate();
+    const location = useLocation(); 
     const [isHovered, setIsHovered] = useState(false);
     const imagesLoaded = useImagePreloader([image, thumbnail2]);
 
     const handleProductClick = () => {
-        navigate(`/product/${id}`);
+        navigate(`/product/${id.toString()}`, {
+            state: { from: location.pathname }
+        });
     };
 
     return (

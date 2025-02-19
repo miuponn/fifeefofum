@@ -37,6 +37,6 @@ export const faqsData = [
     {
         id: 8,
         question: "Have any other requests?",
-        answer: "Please feel free to send me an email using our Contact page!"
+        answer: "Please feel free to send me an email using our *contact page*"
     }
 ];

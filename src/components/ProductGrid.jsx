@@ -46,6 +46,7 @@ const ProductGrid = ({ backgroundColor = "white" }) => {
                 {displayedProducts.map((product) => (
                     <ProductCard
                         key={product.id}
+                        id={product.id}
                         image={product.thumbnail}
                         thumbnail2={product.thumbnail2}
                         name={product.name}
