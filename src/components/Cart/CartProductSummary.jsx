@@ -23,7 +23,7 @@ const CartProductSummary = ({ item }) => {
             </div>
 
             {/* Quantity Controls */}
-            <div className="flex items-center gap-2 border border-peach rounded-sm px-1 py-1">
+            <div className="flex items-center gap-2 border border-peach rounded-sm px-1 py-2">
                 <button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
                     className="text-dark_pink"

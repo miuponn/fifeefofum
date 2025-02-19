@@ -3,12 +3,42 @@ import { Link } from 'react-router-dom';
 import { FiChevronUp } from 'react-icons/fi';
 import lovebirdsImage from '../assets/images/lovebirds.png';
 
-const Sidebar = () => {
+const Sidebar = ({ backgroundColor }) => {
     const [categoryOpen, setCategoryOpen] = useState(false);
     const [availabilityOpen, setAvailabilityOpen] = useState(false);
 
+    const CustomCheckbox = ({ label }) => (
+        <li className="flex items-center gap-2 cursor-pointer">
+            <div 
+                className="w-4 h-4 border border-button_pink rounded cursor-pointer 
+                    flex items-center justify-center transition-colors duration-300
+                    hover:border-dark_pink"
+            >
+                {/* Checkbox will be controlled by parent state */}
+                {false && (
+                    <svg 
+                        className="w-3 h-3 text-white" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                    >
+                        <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
+                            d="M5 13l4 4L19 7" 
+                        />
+                    </svg>
+                )}
+            </div>
+            <span className="font-poppins font-medium uppercase text-dark_pink text-xs hover:underline">
+                {label}
+            </span>
+        </li>
+    );
+
     return (
-        <aside className="w-full bg-[#FFF7F7] flex flex-col h-full">
+        <aside className={`bg-${backgroundColor} p-4 rounded-lg`}>
             <div className="px-4 md:px-6 lg:px-8 py-6 md:py-8 flex-grow">
                 {/* Title */}
                 <h2 className="text-2xl md:text-3xl font-chewie font-extrabold text-dark_pink mb-6">
@@ -38,42 +68,10 @@ const Sidebar = () => {
                             <FiChevronUp className={`transform transition-transform duration-300 ${!categoryOpen ? 'rotate-180' : ''}`} />
                         </button>
                         <div className={`transform transition-all duration-300 ease-in-out overflow-hidden ${categoryOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                            <ul className="mt-2 mb-6 space-y-2 text-xs font-poppins font-medium uppercase text-dark_pink">
-                                <li className="flex items-center gap-2 hover:underline cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-4 h-4 border-2 border-[#E57485] rounded"
-                                    />
-                                    Phone Charms
-                                </li>
-                                <li className="flex items-center gap-2 hover:underline cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-4 h-4 border-2 border-[#E57485] rounded"
-                                    />
-                                    Stickers
-                                </li>
-                                <li className="flex items-center gap-2 hover:underline cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-4 h-4 border-2 border-[#E57485] rounded"
-                                    />
-                                    Keychains
-                                </li>
-                                <li className="flex items-center gap-2 hover:underline cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-4 h-4 border-2 border-[#E57485] rounded"
-                                    />
-                                    Jewelry
-                                </li>
-                                <li className="flex items-center gap-2 hover:underline cursor-pointer">
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-4 h-4 border-2 border-[#E57485] rounded"
-                                    />
-                                    Accessories
-                                </li>
+                            <ul className="mt-2 mb-6 space-y-2">
+                                {["Phone Charms", "Stickers", "Keychains", "Jewelry", "Accessories"].map((category) => (
+                                    <CustomCheckbox key={category} label={category} />
+                                ))}
                             </ul>
                         </div>
                     </div>

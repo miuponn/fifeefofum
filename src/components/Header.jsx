@@ -4,7 +4,7 @@ import SearchBar from "./Header/SearchBar";
 import NavLinks from "./Header/NavLinks";
 import { Link } from "react-router-dom";
 import Fifeefofum from "../assets/images/Fifeefofum.svg";
-import MobileHeader from './Mobile/Header';
+import MobileHeader from './Mobile/MobileHeader';
 
 const Header = () => {
     return (

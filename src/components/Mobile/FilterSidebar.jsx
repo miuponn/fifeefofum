@@ -5,14 +5,44 @@ const FilterSidebar = ({ isOpen, closeFilter }) => {
     const [categoryOpen, setCategoryOpen] = useState(false);
     const [availabilityOpen, setAvailabilityOpen] = useState(false);
 
+    const CustomCheckbox = ({ label }) => (
+        <li className="flex justify-between items-center">
+            <span className="font-poppins text-dark_pink_secondary hover:text-peach transition duration-300">
+                {label}
+            </span>
+            <div 
+                className="w-4 h-4 border border-button_pink rounded cursor-pointer 
+                    flex items-center justify-center transition-colors duration-300
+                    hover:border-dark_pink"
+            >
+                {/* Checkbox will be controlled by parent state */}
+                {false && (
+                    <svg 
+                        className="w-3 h-3 text-white" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                    >
+                        <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth="2" 
+                            d="M5 13l4 4L19 7" 
+                        />
+                    </svg>
+                )}
+            </div>
+        </li>
+    );
+
     return (
         <>
             <div className={`fixed top-0 right-0 h-full w-64 bg-white transform transition-transform duration-300 ease-in-out ${
                 isOpen ? 'translate-x-0' : 'translate-x-full'
             } z-50 shadow-lg`}>
                 {/* Header */}
-                <div className="flex justify-between items-center px-6 py-4 border-b border-pink">
-                    <h2 className="text-dark_pink_secondary text-base font-poppins font-medium">Filters</h2>
+                <div className="flex justify-between items-center px-6 py-4 mt-4 border-b border-pink">
+                    <h2 className="text-[dark_pink] text-md font-chewie font-bold">Filters</h2>
                     <button onClick={closeFilter} className="text-dark_pink_secondary">
                         <FiX className="h-6 w-6" />
                     </button>
@@ -23,18 +53,16 @@ const FilterSidebar = ({ isOpen, closeFilter }) => {
                     {/* Category Dropdown */}
                     <div className="mb-6">
                         <button
-                            className="w-full flex justify-between items-center text-dark_pink_secondary font-poppins text-sm font-medium py-2 border-b border-pink"
+                            className="w-full flex justify-between items-center text-[#E57485] font-poppins text-sm font-medium py-2 border-b border-pink"
                             onClick={() => setCategoryOpen(!categoryOpen)}
                         >
                             Category
                             {categoryOpen ? <FiChevronUp /> : <FiChevronDown />}
                         </button>
                         {categoryOpen && (
-                            <ul className="mt-2 space-y-2 text-sm font-poppins text-dark_pink_secondary">
+                            <ul className="mt-2 space-y-2">
                                 {["Phone Charms", "Stickers", "Keychains", "Jewelry", "Accessories"].map((category) => (
-                                    <li key={category} className="flex justify-between items-center hover:text-peach transition duration-300 cursor-pointer">
-                                        {category} <input type="checkbox" className="accent-dark_pink" />
-                                    </li>
+                                    <CustomCheckbox key={category} label={category} />
                                 ))}
                             </ul>
                         )}
@@ -43,20 +71,17 @@ const FilterSidebar = ({ isOpen, closeFilter }) => {
                     {/* Availability Dropdown */}
                     <div className="mb-6">
                         <button
-                            className="w-full flex justify-between items-center text-dark_pink_secondary font-poppins text-sm font-medium py-2 border-b border-pink"
+                            className="w-full flex justify-between items-center text-[#E57485] font-poppins text-sm font-medium py-2 border-b border-pink"
                             onClick={() => setAvailabilityOpen(!availabilityOpen)}
                         >
                             Availability
                             {availabilityOpen ? <FiChevronUp /> : <FiChevronDown />}
                         </button>
                         {availabilityOpen && (
-                            <ul className="mt-2 space-y-2 text-sm font-poppins text-dark_pink_secondary">
-                                <li className="flex justify-between items-center hover:text-peach transition duration-300 cursor-pointer">
-                                    In Stock <input type="checkbox" className="accent-dark_pink" />
-                                </li>
-                                <li className="flex justify-between items-center hover:text-peach transition duration-300 cursor-pointer">
-                                    Out of Stock <input type="checkbox" className="accent-dark_pink" />
-                                </li>
+                            <ul className="mt-2 space-y-2">
+                                {["In Stock", "Out of Stock"].map((status) => (
+                                    <CustomCheckbox key={status} label={status} />
+                                ))}
                             </ul>
                         )}
                     </div>
