@@ -18,8 +18,8 @@ const NavLinks = () => {
     }, []);
 
     return (
-        <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-5 text-dark_pink_secondary font-normal font-poppins">
-            <Link to="/" className="hover:text-peach transition duration-300 text-xs sm:text-sm md:text-sm lg:text-base hover:scale-105">
+        <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4 xl:space-x-5 text-dark_pink_secondary font-normal font-poppins text-xs sm:text-sm md:text-base">
+            <Link to="/" className="hover:text-peach transition duration-300 hover:scale-105">
                 Home
             </Link>
 
@@ -27,7 +27,7 @@ const NavLinks = () => {
             <div className="relative" ref={dropdownRef}>
                 <button
                     onClick={() => setIsShopOpen(!isShopOpen)}
-                    className="flex items-center gap-1 relative transition duration-300 ease-in-out group text-xs sm:text-sm md:text-sm lg:text-base hover:scale-105"
+                    className="flex items-center gap-1 relative transition duration-300 ease-in-out group hover:scale-105"
                     aria-haspopup="true"
                     aria-expanded={isShopOpen}
                 >
@@ -42,33 +42,38 @@ const NavLinks = () => {
                 </button>
                 {isShopOpen && (
                     <div className="absolute left-0 mt-2 w-48 bg-white border border-pink rounded-md shadow-md" role="menu">
-                        {["Shop All", "Bracelets", "Keychains", "Rings", "Necklaces", "Stickers"].map((item) => (
-                            <Link key={item} to="#" className="block px-4 py-2 text-dark_pink_secondary hover:text-peach transition duration-300 text-xs sm:text-sm md:text-sm lg:text-base hover:scale-105" role="menuitem">
-                                {item}
+                        <Link to="/products" className="block px-4 py-2 text-dark_pink_secondary hover:text-peach transition duration-300 hover:scale-105" role="menuitem">
+                            <li className="uppercase list-none">
+                                Shop All
+                            </li>
+                        </Link>
+                        {["Bracelets", "Keychains", "Rings", "Necklaces", "Stickers"].map((category) => (
+                            <Link key={category} to="#" className="block px-4 py-2 text-dark_pink_secondary hover:text-peach transition duration-300 hover:scale-105" role="menuitem">
+                                <li className="uppercase list-none">
+                                    {category}
+                                </li>
                             </Link>
                         ))}
                     </div>
                 )}
             </div>
-
-            <Link to="/faqs" className="hover:text-peach transition duration-300 text-xs sm:text-sm md:text-sm lg:text-base hover:scale-105">
-                FAQs
-            </Link>
-            <Link to="/about" className="hover:text-peach transition duration-300 text-xs sm:text-sm md:text-sm lg:text-base hover:scale-105">
+            
+            <Link to="/about" className="hover:text-peach transition duration-300 hover:scale-105">
                 About
             </Link>
-            <Link to="/contact" className="hover:text-peach transition duration-300 text-xs sm:text-sm md:text-sm lg:text-base hover:scale-105">
+            <Link to="/faqs" className="hover:text-peach transition duration-300 hover:scale-105">
+                FAQs
+            </Link>
+            <Link to="/contact" className="hover:text-peach transition duration-300 hover:scale-105">
                 Contact
             </Link>
 
-            {/* User Icon (Placeholder) */}
+            {/* User and Cart Icons */}
             <button className="hover:scale-105 transition duration-300">
-                <FiUser className="text-xl" />
+                <FiUser className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
-
-            {/* Cart Icon (Opens Modal) */}
             <button className="hover:scale-105 transition duration-300">
-                <FiShoppingBag className="text-xl" />
+                <FiShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             </button>
         </div>
     );

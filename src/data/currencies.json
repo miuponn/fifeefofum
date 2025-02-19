@@ -1,6 +1,6 @@
 {
     "CAD": {
-		"symbol": "$",
+		"symbol": "CAD $",
 		"name": "Canadian Dollar",
 		"symbol_native": "$",
 		"decimal_digits": 2,

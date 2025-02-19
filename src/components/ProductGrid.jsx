@@ -2,16 +2,13 @@ import { useState } from "react";
 import ProductCard from "./ProductCard";
 import productsData from "../data/productsData";
 
-const ProductGrid = () => {
-    // State for sorting (static for now)
+const ProductGrid = ({ backgroundColor = "white" }) => {
     const [sortOption, setSortOption] = useState("Bestselling");
 
-    // Static sorting handler (to be expanded later)
     const handleSortChange = (event) => {
         setSortOption(event.target.value);
     };
 
-    // Pagination (static for now)
     const productsPerPage = 16; 
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = Math.ceil(productsData.length / productsPerPage);
@@ -22,23 +19,26 @@ const ProductGrid = () => {
     );
 
     return (
-        <section className="w-full flex flex-col">
-            {/* Sorting Options */}
-            <div className="flex justify-between items-center px-4 sm:px-6 md:px-8 py-3">
+        <section className="w-full flex flex-col" style={{ backgroundColor }}>
+            {/* Sorting Options - Hidden on mobile */}
+            <div className="hidden md:flex justify-between items-center px-4 sm:px-6 md:px-8 py-3">
                 <span className="text-sm text-dark_pink_secondary">
                     {productsData.length} Products
                 </span>
 
-                <select
-                    className="border border-pink rounded-md px-3 py-2 text-sm"
-                    value={sortOption}
-                    onChange={handleSortChange}
-                >
-                    <option value="Bestselling">Bestselling</option>
-                    <option value="Alphabetical">Alphabetical, A-Z</option>
-                    <option value="PriceLowHigh">Price, Low to High</option>
-                    <option value="PriceHighLow">Price, High to Low</option>
-                </select>
+                <div className="flex items-center gap-6">
+                    <span className="text-pink font-poppins text-sm">Sort by:</span>
+                    <select
+                        className="border border-pink rounded-md px-3 py-2 text-sm bg-transparent text-dark_pink_secondary"
+                        value={sortOption}
+                        onChange={handleSortChange}
+                    >
+                        <option value="Bestselling">Bestselling</option>
+                        <option value="Alphabetical">Alphabetical, A-Z</option>
+                        <option value="PriceLowHigh">Price, Low to High</option>
+                        <option value="PriceHighLow">Price, High to Low</option>
+                    </select>
+                </div>
             </div>
 
             {/* Products Grid */}
@@ -47,38 +47,40 @@ const ProductGrid = () => {
                     <ProductCard
                         key={product.id}
                         image={product.thumbnail}
+                        thumbnail2={product.thumbnail2}
                         name={product.name}
                         price={product.price}
-                        buttonStyle="px-4 py-2 bg-white border border-pink text-dark_pink_secondary hover:bg-pink hover:text-white"
-                        priceStyle="text-sm text-dark_pink_secondary"
-                        nameStyle="text-sm md:text-md text-dark_pink font-bold"
+                        buttonStyle="px-4 py-2 bg-transparent border border-pink text-dark_pink_secondary hover:bg-pink hover:text-white"
+                        priceStyle="text-dark_pink_secondary font-urbanist"
+                        nameStyle="text-sm md:text-md text-dark_pink font-bold font-urbanist"
+                        nameHoverStyle="hover:underline decoration-dark_pink"
                     />
                 ))}
             </div>
 
-            {/* Pagination */}
-            <div className="flex justify-center items-center gap-3 mt-6">
-                <button
-                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-                    disabled={currentPage === 1}
-                    className={`px-3 py-2 text-sm ${
-                        currentPage === 1 ? "text-gray-400 cursor-not-allowed" : "text-dark_pink_secondary hover:underline"
-                    }`}
-                >
-                    Prev
-                </button>
-                
-                <span className="text-dark_pink_secondary">{currentPage} / {totalPages}</span>
-
-                <button
-                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-                    disabled={currentPage === totalPages}
-                    className={`px-3 py-2 text-sm ${
-                        currentPage === totalPages ? "text-gray-400 cursor-not-allowed" : "text-dark_pink_secondary hover:underline"
-                    }`}
-                >
-                    Next
-                </button>
+            {/* Updated Pagination */}
+            <div className="flex justify-center items-center gap-4 mt-6 md:mt-8">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                    <button
+                        key={pageNum}
+                        onClick={() => setCurrentPage(pageNum)}
+                        className={`font-poppins font-medium text-xs sm:text-sm md:text-base ${
+                            currentPage === pageNum 
+                            ? 'text-pink underline' 
+                            : 'text-pink hover:underline'
+                        }`}
+                    >
+                        {pageNum}
+                    </button>
+                ))}
+                {currentPage < totalPages && (
+                    <button
+                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                        className="font-poppins font-medium text-pink hover:underline flex items-center gap-1 text-xs sm:text-sm md:text-base"
+                    >
+                        Next <span className="text-pink">&gt;</span>
+                    </button>
+                )}
             </div>
         </section>
     );

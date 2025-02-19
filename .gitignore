@@ -54,3 +54,6 @@ src/styles/output.css
 # Uncomment if you want to ignore font files
 # /public/fonts/*
 # /src/assets/fonts/*
+
+# Exclude node_modules cache
+/node_modules/.cache

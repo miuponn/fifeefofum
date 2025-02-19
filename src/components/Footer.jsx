@@ -23,11 +23,11 @@ const Footer = () => {
 
         {/* Right - Policies */}
         <div className="w-full md:w-1/4 flex flex-col items-center md:items-end justify-center h-full">
-          <nav className="flex flex-col gap-2 mt-4 md:mt-8 w-full text-center md:text-right">
-            <Link to="/shipping-policy" className="text-sm sm:text-base hover:underline">
+          <nav className="flex flex-col gap-2 mt-4 md:mt-10 w-full text-center md:text-right">
+            <Link to="/shipping-policy" className="text-xs sm:text-base hover:underline">
               Shipping Policy
             </Link>
-            <Link to="/refund-policy" className="text-sm sm:text-base hover:underline">
+            <Link to="/refund-policy" className="text-xs sm:text-base hover:underline">
               Refund Policy
             </Link>
           </nav>
@@ -56,14 +56,14 @@ const Footer = () => {
           </a>
           <a 
             href="https://www.etsy.com/shop/fifeefofum" 
-            className="transition-opacity hover:opacity-80"
+            className="transition-opacity hover:opacity-80 mt-0.5 md:mt-1"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={EtsyIcon} alt="Etsy" className="h-6 sm:h-7" />
           </a>
         </div>
-        {/* Copyright - Increased text size */}
+        {/* Copyright */}
         <p className="text-xs sm:text-sm font-poppins">© 2025 Fifeefofum</p>
       </div>
     </footer>

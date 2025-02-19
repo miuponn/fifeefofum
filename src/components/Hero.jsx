@@ -18,7 +18,7 @@ const Hero = () => {
                     <motion.img
                         src={birdLogo}
                         alt="Fifeefofum Logo"
-                        className="w-[70%] h-auto"
+                        className="w-auto h-[70%] object-contain aspect-auto"
                         whileHover={{ y: -10 }}
                         whileTap={{ rotate: 360 }}
                         transition={{ type: "spring", stiffness: 300 }}

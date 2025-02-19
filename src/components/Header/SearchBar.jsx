@@ -31,7 +31,7 @@ const SearchBar = () => {
       {/* Search Icon (Scales on Hover) */}
       <FiSearch
         className={`absolute right-3 top-1/2 transform -translate-y-1/2 text-[#F9E1E1] text-lg transition-all duration-300 ease-in-out
-          ${isFocused ? "text-pink scale-110" : ""}
+          ${isFocused ? "text-accent_pink scale-110" : ""}
         `}
       />
     </div>
