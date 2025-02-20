@@ -167,7 +167,7 @@ const ReviewModal = ({
                                             priceStyle="font-urbanist font-semibold text-pink text-xs mt-1"
                                             hoverStyle={{ 
                                                 scale: 1.02,
-                                                boxShadow: "2px 4px 12px rgba(100, 0, 0, 0.2)" // Angled drop shadow
+                                                boxShadow: "2px 4px 12px rgba(100, 0, 0, 0.2)" 
                                             }}
                                         />
                                     </button>

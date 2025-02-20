@@ -27,7 +27,7 @@ const HeroText = () => {
 
     return (
         <div className="relative flex flex-col items-center justify-center text-center text-white w-full h-full">
-            {/* Typing Text and Twinkling Stars Container */}
+            {/* Typing text and twinkling stars Container */}
             <div className="relative w-full pb-10 md:pb-12 lg:pb-16">
                 {/* Twinkling Stars */}
                 <motion.span

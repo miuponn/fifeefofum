@@ -13,7 +13,7 @@ const Footer = () => {
           <Link to="/" className="text-3xl sm:text-4xl lg:text-5xl font-snowdoodle hover:opacity-80 transition-opacity text-center md:text-left">
             Fifeefofum
           </Link>
-          {/* Footer Links - Added text-center for mobile */}
+          {/* Footer Links */}
           <nav className="flex flex-col gap-2 mt-4 text-sm sm:text-base w-full text-center md:text-left">
             <Link to="/about" className="hover:underline">About</Link>
             <Link to="/faqs" className="hover:underline">FAQs</Link>
@@ -36,7 +36,7 @@ const Footer = () => {
 
       {/* Bottom Section - Socials and Copyright */}
       <div className="w-full flex flex-col items-center gap-3 mt-8">
-        {/* Social Icons - Increased size */}
+        {/* Social Icons */}
         <div className="flex gap-6 text-2xl sm:text-3xl">
           <a 
             href="https://www.instagram.com/fifeefofum" 

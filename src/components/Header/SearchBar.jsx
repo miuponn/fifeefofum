@@ -12,7 +12,7 @@ const SearchBar = () => {
           ${isFocused ? "border-2 border-pink w-64 md:w-80 lg:w-96 rounded-md" : ""}
         `}
       >
-        {/* Static "search..." Text (Disappears on Focus) */}
+        {/* Static "search..." Text (disappears on focus) */}
         {!isFocused && (
           <span className="text-[#F9E1E1] font-viucobacoba text-lg transition-opacity duration-300">
             search...

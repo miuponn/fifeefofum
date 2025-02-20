@@ -101,7 +101,7 @@ const ProductSelection = ({
 
             {/* Add to Cart Button - Full width on mobile */}
             <motion.button
-                onClick={handleAddToCart} // Add onClick handler
+                onClick={handleAddToCart}
                 className="w-full sm:w-[80%] mx-auto sm:mx-0 py-3 bg-peach text-white rounded-md font-poppins font-semibold
                     hover:bg-white hover:text-peach border border-transparent
                     hover:border-peach transition-all duration-300"

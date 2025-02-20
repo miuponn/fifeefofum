@@ -19,7 +19,7 @@ const ProductDescription = ({ description }) => {
 
     return (
         <div className="max-w-3xl mx-auto">
-            <div className="relative"> {/* Removed motion.div here */}
+            <div className="relative"> 
                 <div
                     ref={textRef}
                     className={`whitespace-pre-line font-poppins font-medium text-button_pink`}
@@ -27,7 +27,7 @@ const ProductDescription = ({ description }) => {
                         lineHeight: `${lineHeight}rem`,
                         height: isExpanded ? 'auto' : '10.5rem',
                         overflow: 'hidden',
-                        transition: 'height 0.3s ease-in-out' // Smooth height transition only
+                        transition: 'height 0.3s ease-in-out'
                     }}
                 >
                     {description}
