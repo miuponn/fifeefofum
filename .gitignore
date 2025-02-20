@@ -10,7 +10,7 @@
 /build
 /dist
 
-# Environment files
+# Env files
 .env
 .env.local
 .env.development.local
@@ -30,30 +30,19 @@ yarn-error.log*
 *.swo
 .DS_Store
 
-# Misc
+# misc
 .cache
 .temp
 *.log
 
-# Optional npm cache directory
 .npm
 
-# Optional eslint cache
 .eslintcache
 
-# Optional REPL history
 .node_repl_history
 
-# Optional VS Code workspace settings
 .vscode-test
 
-# Tailwind CSS processed output
 src/styles/output.css
 
-# Local font files (if needed)
-# Uncomment if you want to ignore font files
-# /public/fonts/*
-# /src/assets/fonts/*
-
-# Exclude node_modules cache
 /node_modules/.cache
