@@ -37,9 +37,9 @@ const ProductDetailsPage = () => {
                     <span className="text-dark_pink">{product.name}</span>
                 </nav>
 
-                {/* Product Details Container - adjusted width */}
+                {/* Product Details Container */}
                 <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 py-6 md:py-12 w-[90%]">
-                    {/* Desktop Layout: Two Columns - increased gap */}
+                    {/* Desktop Layout: Two Columns */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 lg:gap-20">
                         {/* Left Column: Gallery + Reviews */}
                         <div className="space-y-12">
