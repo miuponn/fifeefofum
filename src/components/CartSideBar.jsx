@@ -1,4 +1,3 @@
-// src/components/Cart/CartSidebar.jsx
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FiX } from 'react-icons/fi';
